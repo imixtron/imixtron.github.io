@@ -1,0 +1,70 @@
+import {Box, Card, Flex, Grid, Heading, Inset, ScrollArea, Strong, Text} from '@radix-ui/themes';
+import About from '@/components/about';
+import Experience from '@/components/experience';
+import {oversizedWidth} from '@/app/layout';
+import Header from '@/components/header';
+import TopBlogPosts from '@/components/blog/top-blog-posts';
+
+export default function Home() {
+	return (
+		<Flex align="center" direction="column" gap="4" style={{width: oversizedWidth}}>
+			<Header/>
+
+			{/*<Box maxWidth="350px">*/}
+			{/*  <About />*/}
+			{/*</Box>*/}
+
+			<Grid px="6" pb="6" columns="3" inset="3" gap="3" width="auto">
+				<About/>
+
+				{/*<ScrollArea type="hover" scrollbars="vertical" style={{maxHeight: '70vh'}}>*/}
+				{/*	<Experience/>*/}
+				{/*</ScrollArea>*/}
+				<Box>
+					<Heading>Blog</Heading><br />
+					<TopBlogPosts />
+				</Box>
+
+
+				{/*  /!* Playground *!/*/}
+				<Box style={{maxHeight: '70vh'}}>
+					<Heading>Playground</Heading><br/>
+					<ScrollArea type="hover" scrollbars="vertical" style={{maxHeight: '60vh'}}>
+						<Flex direction="column" gap="3">
+							<CardComponent/>
+							<CardComponent/>
+							<CardComponent/>
+							<CardComponent/>
+						</Flex>
+					</ScrollArea>
+				</Box>
+			</Grid>
+		</Flex>
+	);
+}
+
+const CardComponent = () => {
+	return (
+		<Box>
+			<Card size="2">
+				<Inset clip="padding-box" side="top" pb="current">
+					<img
+						src="https://images.unsplash.com/photo-1617050318658-a9a3175e34cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+						alt="Bold typography"
+						style={{
+							display: "block",
+							objectFit: "cover",
+							width: "100%",
+							height: 140,
+							backgroundColor: "var(--gray-5)",
+						}}
+					/>
+				</Inset>
+				<Text as="p" size="3">
+					<Strong>Typography</Strong> is the art and technique of arranging type to
+					make written language legible, readable and appealing when displayed.
+				</Text>
+			</Card>
+		</Box>
+	)
+}
