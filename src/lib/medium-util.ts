@@ -79,6 +79,7 @@ class MediumUtils {
             // return { ...latest, descriptionHtml: latest?.description, img: descAttrs.imageSrc, imgAlt: descAttrs.imageAlt, description: descAttrs.description };
         } catch (e) {
             console.log(e);
+		return [];
         }
 	}
 
