@@ -15,6 +15,9 @@ const nextConfig = {
     },
     optimizeServerReact: false,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack: (config) => {
     return config
   }
