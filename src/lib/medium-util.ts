@@ -1,4 +1,3 @@
-import * as R from 'ramda';
 import * as rssJson from 'rss-to-json';
 import * as cheerio from 'cheerio';
 import axios from 'axios';
