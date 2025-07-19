@@ -1,25 +1,33 @@
-import {MediumHandler} from '@/components/blog/medium-utils';
+// src/app/api/my-proxy/route.ts
 
-export async function GET(request: Request) {
-	const posts = await MediumHandler.fetchLatestFromFeed()
-	// For example, fetch data from your DB here
+import { MediumHandler } from '@/lib/medium-util';
+import { NextResponse } from 'next/server';
 
-	return new Response(JSON.stringify(posts), {
-		status: 200,
-		headers: { 'Content-Type': 'application/json' }
-	});
-}
+export async function GET() {
+  try {
+    const posts = await MediumHandler.fetchLatestFromFeed();
+    console.log(posts);
+    // console.log(posts);
+    // const externalRes = await fetch('https://your-secret-api.com/data', {
+    //   method: 'GET',
+    //   headers: {
+    //     Authorization: `Bearer ${process.env.API_SECRET}`,
+    //     'Content-Type': 'application/json',
+    //   },
+    //   // Optional: Set cache to no-store if data is dynamic
+    //   cache: 'no-store',
+    // });
 
-export async function POST(request: Request) {
-	// Parse the request body
-	const body = await request.json();
-	const { name } = body;
+    // if (!externalRes.ok) {
+    //   return NextResponse.json(
+    //     { error: 'Failed to fetch external API' },
+    //     { status: externalRes.status }
+    //   );
+    // }
 
-	// e.g. Insert new user into your DB
-	const newUser = { id: Date.now(), name };
-
-	return new Response(JSON.stringify(newUser), {
-		status: 201,
-		headers: { 'Content-Type': 'application/json' }
-	});
+    // const data = await externalRes.json();
+    return NextResponse.json(posts);
+  } catch (err) {
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
 }
