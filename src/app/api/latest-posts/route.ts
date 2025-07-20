@@ -1,5 +1,7 @@
 // app/api/latest-posts/route.ts
 
+export const dynamic = 'force-dynamic';
+
 import * as rssJson from 'rss-to-json';
 import * as cheerio from 'cheerio';
 import { NextResponse } from 'next/server';
