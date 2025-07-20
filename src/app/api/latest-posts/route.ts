@@ -47,7 +47,7 @@ class MediumUtils {
   public async fetchLatestFromFeed(): Promise<Post[] | null> {
         try {
 
-            const mediumUrl = process.env.MEDIUM_URL ?? 'https://imixtron.medium.com/feed';
+            const mediumUrl = 'https://imixtron.medium.com/feed';
     
             if (!mediumUrl) {
                 return null
