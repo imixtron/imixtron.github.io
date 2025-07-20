@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
     domains: [],
   },
@@ -9,9 +10,6 @@ const nextConfig = {
   experimental: {
     serverActions: {
       enabled: true
-    },
-    experimental: {
-      optimizePackageImports: [] //"lodash", "date-fns"
     },
     optimizeServerReact: false,
   },
