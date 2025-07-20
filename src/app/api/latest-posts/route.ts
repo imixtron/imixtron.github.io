@@ -1,3 +1,5 @@
+// app/api/latest-posts/route.ts
+
 import * as rssJson from 'rss-to-json';
 import * as cheerio from 'cheerio';
 import { NextResponse } from 'next/server';
