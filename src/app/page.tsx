@@ -8,10 +8,10 @@ import Footer from "@/components/Footer";
 const IndexPage = () => {
   return <div className="min-h-screen bg-background">
       <Header />
-      <main>
-        <Hero />
-        <ThreeColumnSection />
-      </main>
+        <main>
+          <Hero />
+          <ThreeColumnSection />
+        </main>
       <Footer />
     </div>;
 };

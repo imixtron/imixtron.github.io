@@ -45,7 +45,6 @@ const Projects = () => {
           link: post.link,
         }))
       );
-      console.log('here are posts', json);
     })
     .catch((err) => console.error('Fetch error:', err));
     // setPosts(posts);
@@ -54,41 +53,6 @@ const Projects = () => {
   useEffect(() => {
     setupPosts();
   }, []);
-
-  const projects = [
-    {
-      title: "Modern Web Application",
-      description: "A full-stack application built with React and Node.js, featuring real-time collaboration.",
-      date: "2024",
-      tags: ["React", "Node.js", "TypeScript"],
-      type: "project",
-      link: "#"
-    },
-    {
-      title: "Building Modern UIs",
-      description: "Deep dive into component design patterns and best practices for scalable applications.",
-      date: "Dec 2023",
-      tags: ["UI/UX", "Components", "Design"],
-      type: "blog",
-      link: "https://blog.backinagist.com"
-    },
-    {
-      title: "E-commerce Platform",
-      description: "Complete e-commerce solution with payment integration and inventory management.",
-      date: "2023",
-      tags: ["React", "Stripe", "Database"],
-      type: "project",
-      link: "#"
-    },
-    {
-      title: "Performance Optimization",
-      description: "Techniques for optimizing web applications and improving Core Web Vitals.",
-      date: "Nov 2023",
-      tags: ["Performance", "Optimization", "Web"],
-      type: "blog",
-      link: "https://blog.backinagist.com"
-    }
-  ];
 
   return (
     <div className="space-y-6">
