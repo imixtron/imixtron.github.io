@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MessageSquare, Phone } from "lucide-react";
 import ContactPopup from "./ContactPopup";
+import CalEmbedButton from "@/components/custom/CalEmbedButton.tsx";
 
 const Contact = () => {
   const contactInfo = [
@@ -14,7 +15,7 @@ const Contact = () => {
     {
       icon: MessageSquare,
       title: "Let's Chat",
-      description: "Send a message",
+      description: "Book a Call with me",
       action: "popup"
     },
     {
@@ -54,16 +55,17 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 {item.action === "popup" ? (
-                  <ContactPopup>
-                    <Button size="sm" className="shadow-elegant">
-                      Send
-                    </Button>
-                  </ContactPopup>
+                  <CalEmbedButton size="sm" className="shadow-elegant">Book</CalEmbedButton>
+                  // <ContactPopup>
+                  //   <Button size="sm" className="shadow-elegant">
+                  //     Send
+                  //   </Button>
+                  // </ContactPopup>
                 ) : item.action ? (
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="sm"
                     asChild
                   >
