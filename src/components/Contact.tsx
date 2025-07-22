@@ -8,8 +8,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      description: "imixtron@hotmail.com",
-      action: "mailto:imixtron@hotmail.com"
+      description: "hello@imixtron.com",
+      action: "mailto:hello@imixtron.com"
     },
     {
       icon: MessageSquare,
