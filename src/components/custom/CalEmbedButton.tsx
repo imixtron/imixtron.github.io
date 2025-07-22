@@ -1,21 +1,17 @@
 'use client';
 
 import { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
-import {text} from "node:stream/consumers";
-import {Button} from "@/components/ui/button.tsx";
+import {ReactNode, useEffect} from "react";
+import {Button, ButtonProps} from "@/components/ui/button";
 
-interface CalEmbedButtonProps {
-    btnText: string;
-}
-
-export default function CalEmbedButton(props: CalEmbedButtonProps) {
+const CalEmbedButton = (props: ButtonProps & { children: any }) => {
     const { children } = props;
 
     useEffect(() => {
         (async function () {
             const cal = await getCalApi({"namespace":"30min"});
-            cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+            const attrs: any = {"hideEventTypeDetails":false,"layout":"month_view"};
+            cal("ui", attrs);
         })();
     }, []);
 
@@ -25,3 +21,5 @@ export default function CalEmbedButton(props: CalEmbedButtonProps) {
                    {...props}
     >{children}</Button>;
 };
+
+export default CalEmbedButton;

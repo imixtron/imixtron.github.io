@@ -1,8 +1,7 @@
+import CalEmbedButton from "@/components/custom/CalEmbedButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MessageSquare, Phone } from "lucide-react";
-import ContactPopup from "./ContactPopup";
-import CalEmbedButton from "@/components/custom/CalEmbedButton.tsx";
 
 const Contact = () => {
   const contactInfo = [
